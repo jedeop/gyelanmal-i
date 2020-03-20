@@ -25,6 +25,7 @@
       body {
         min-height: 100vh;
         background: linear-gradient(280deg, #fff, #f4f4f4, #fff);
+        padding-bottom: 50px;
       }
       .text {
         font-size: 1.2em;
@@ -50,6 +51,15 @@
         white-space: pre-line;
         display: inline-block;
         margin: auto;
+      }
+      .howto {
+        display: flex;
+        align-items: flex-start;
+        margin: auto;
+        width: 65%;
+      }
+      .howto > img {
+        width: 50%;
       }
     </style>
   </head>
@@ -87,5 +97,11 @@
     <pre class="code">
       $.get('https://gyelanmal-i.web.app/index.prod.js')
     </pre>
+    <div class="hr"></div>
+    <h2>어떻게 사용하나요?</h2>
+    <div class="howto">
+      <img src="./images/howto.png" alt="계란말이 작품 만들기">
+      <img src="./images/howto1.png" alt="계란말이 작품 실행하기">
+    </div>
   </body>
 </html>
