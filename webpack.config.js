@@ -6,7 +6,7 @@ module.exports = function(env) {
     entry: './src/index.js',
     output: {
       path: path.resolve(__dirname, 'public'),
-      filename: 'index.bundle.js'
+      filename: `index.${env.prod? 'prod' : 'dev'}.js`
     },
     watch: env && env.watch
   }
