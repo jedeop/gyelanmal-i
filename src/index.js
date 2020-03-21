@@ -14,6 +14,9 @@ window.gyelan = { // 관련 글로벌 변수들
   perfix: undefined,
 }
 
+function isEntryPage() { // 올바른 페이지인가?
+  return document.location.hostname == 'playentry.org' && Entry && Entry.variableContainer;
+}
 function getPerfix() {
   const result = gyelan.perfixVar.getValue();
   utils.log(`이 작품은 '${result}'(으)로 시작하는 변수를 계란말이 변수로 사용합니다.`);
@@ -37,7 +40,7 @@ function subscribe(ref) {
     for (const key in data) {
       let vari = _.find(gyelan.vars, { id_: key });
       if (!vari) {
-        projectRef.update({
+        ref.update({
           [key]: firebase.firestore.FieldValue.delete()
         });
         continue;
@@ -51,8 +54,10 @@ function subscribe(ref) {
 }
 
 function init() {
+  if (!isEntryPage()) return utils.error('작품 실행 페이지 또는 작품 만들기 페이지가 아닙니다.');
+
   let vc = Entry.variableContainer;
-  gyelan.perfixVar = vc.getVariableByName('계란말이'); // 계란말이 변수의 Prefix
+  gyelan.perfixVar = vc.getVariableByName('계란말이'); // 계란말이 변수
   if (!gyelan.perfixVar) return utils.log('이 작품은 계란말이를 사용하지 않습니다!');
   else gyelan.perfix = getPerfix();
 
@@ -68,6 +73,7 @@ function init() {
     }
     gyelan.unsubscribe = subscribe(projectRef); // 작품 실행 시 동기화 켜기
     utils.log('변수 동기화 시작');
+    gyelan.perfixVar.setValue('설치됨', false); // 계란말이 변수의 값을 '설치됨'으로 변경
   })
   Entry.addEventListener('stop', () => { // 작품 종료 시 동기화 끄기
     gyelan.unsubscribe();
