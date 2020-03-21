@@ -4,14 +4,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>계란말이</title>
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1:200,700,900" rel="stylesheet">
     <style media="screen">
       * {
         text-align: center;
+        font-family: 'Gothic A1';
       }
       h1 {
-        font-size: 3em;
+        font-size: 4em;
         margin: 0px;
         padding: 30px;
+        font-weight: 900;
+      }
+      h2 {
+        font-size: 1.5em;
+        font-weight: 900;
+      }
+      h3 {
+        font-size: 1.3em;
+        font-weight: 700;
       }
       .hr {
         border-bottom: 2px hsl(0, 0%, 80%) solid;
@@ -29,9 +40,13 @@
       }
       .text {
         font-size: 1.2em;
+        font-weight: 200;
       }
       .strong {
-        font-weight: 600;
+        font-weight: 700;
+      }
+      .adventage {
+        font-size: 1.8em;
       }
       .cont {
         display: grid;
@@ -51,15 +66,26 @@
         white-space: pre-line;
         display: inline-block;
         margin: auto;
+        font-family: monospace;
       }
       .howto {
-        display: flex;
-        align-items: flex-start;
         margin: auto;
         width: 65%;
       }
-      .howto > img {
-        width: 50%;
+      .howto h3 {
+        text-align: left;
+        margin-left: 35px;
+        margin-top: 50px;
+      }
+      .make-project {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .make-project img {
+        height: 300px;
+      }
+      .make-project .text {
+        font-size: 1.3em;
       }
     </style>
   </head>
@@ -71,23 +97,23 @@
     <div class="hr"></div>
     <div class="cont">
       <div class="text item">
-        <h3>쉬운 사용</h3>
+        <h2 class="adventage">쉬운 사용</h2>
         <p>
           '계란말이' 변수 <span class="strong">하나</span>만 추가하면<br>
           사용할 준비가 끝납니다.
         </p>
       </div>
       <div class="text item">
-        <h3>빠른 속도</h3>
+        <h2 class="adventage">빠른 속도</h2>
         <p>
           지리적으로 <span class="strong">가까운 서버</span>를 사용해<br>
           속도가 빠릅니다.
         </p>
       </div>
       <div class="text item">
-        <h3>안정적 저장</h3>
+        <h2 class="adventage">안정적 저장</h2>
         <p>
-          NoSQL DB인 Firebase의 <span class="strong">Firestore에</span><br>
+          NoSQL DB인 Firebase의 <span class="strong">Firestore</span>에<br>
           정보를 저장합니다.
         </p>
       </div>
@@ -100,8 +126,38 @@
     <div class="hr"></div>
     <h2>어떻게 사용하나요?</h2>
     <div class="howto">
-      <img src="./images/howto.png" alt="계란말이 작품 만들기">
-      <img src="./images/howto1.png" alt="계란말이 작품 실행하기">
+      <h3>계란말이 작품 만들기 ></h3>
+      <div class="make-project">
+        <div class="desc">
+          <img src="./images/howtoMainVar.png" alt="">
+          <p class="text">
+            1. <span class="strong">'계란말이'</span>라는 이름의 변수를 만듭니다.
+          </p>
+        </div>
+        <div class="desc">
+          <img src="./images/howtoSet.png" alt="">
+          <p class="text">
+            2. 실시간 변수/리스트의<Br><span class="strong">접두어</span>로 사용될 단어를 <br><span class="strong">'계란말이'</span> 변수의 값으로 정하세요.
+          </p>
+        </div>
+        <div class="desc">
+          <img src="./images/howtoUseVar.png" alt="">
+          <p class="text">
+            3. 실시간 변수/리스트로 사용할 변수/리스트의<br>이름을 앞에서 정한 <span class="strong">접두어로 시작</span>하도록<br>정하세요. <span class="strong">공유 변수/리스트로 사용</span>을 체크 해야합니다.
+          </p>
+        </div>
+      </div>
+      <div class="hr"></div>
+      <h3>계란말이 설치하기 ></h3>
+      <div class="install">
+        <div class="desc">
+          <img src="./images/howtoInstall.png" alt="">
+          <p class="text">
+            'F12'를 눌러 <span class="strong">개발자도구</span>를 연 뒤,<br>
+            콘솔(console)에 <span class="strong">설치 스크립트를 입력</span>하세요.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
