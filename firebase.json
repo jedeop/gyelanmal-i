@@ -17,6 +17,28 @@
           {
             "key": "Access-Control-Allow-Origin",
             "value": "https://playentry.org"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "public,max-age=300"
+          }
+        ]
+      },
+      {
+        "source": "**/*.png",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public,max-age=86400"
+          }
+        ]
+      },
+      {
+        "source": "index.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public,max-age=3600"
           }
         ]
       }
