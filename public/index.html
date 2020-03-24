@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <title>계란말이</title>
     <link href="https://fonts.googleapis.com/css?family=Gothic+A1:200,700,900" rel="stylesheet">
     <style media="screen">
@@ -37,6 +38,8 @@
         min-height: 100vh;
         background: linear-gradient(280deg, #fff, #f4f4f4, #fff);
         padding-bottom: 50px;
+        width: 65%;
+        margin: auto;
       }
       .text {
         font-size: 1.2em;
@@ -51,8 +54,6 @@
       .cont {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        width: 65%;
-        margin: auto;
         gap: 50px;
       }
       .cont > .item {
@@ -67,10 +68,6 @@
         display: inline-block;
         margin: auto;
         font-family: monospace;
-      }
-      .howto {
-        margin: auto;
-        width: 65%;
       }
       .howto h3 {
         text-align: left;
@@ -91,6 +88,23 @@
         font-weight: 700;
         margin-top: 30px;
         margin-bottom: 15px;
+      }
+      img {
+        max-width: 90vw;
+      }
+      @media (max-width: 1000px) {
+        body {
+          width: 90%;
+        }
+        .cont {
+          gap: 25px;
+        }
+        .howto h3 {
+          margin-left: 0px;
+        }
+        .cont, .make-project {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
