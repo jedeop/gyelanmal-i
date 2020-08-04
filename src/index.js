@@ -6,6 +6,7 @@ import "firebase/firestore";
 import db from './firestore';
 
 utils.log('다운로드 완료!');
+utils.error('[Deprecated] 본 확장기능은 더 이상 사용되지 않습니다. 실시간 변수, 실시간 리스트가 엔트리에 공식적으로 추가되었으니 해당 기능을 사용하시길 강력히 권해드립니다.')
 
 window.gyelan = { // 관련 글로벌 변수들
   vars: [],
